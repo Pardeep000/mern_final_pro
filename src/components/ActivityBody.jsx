@@ -2,6 +2,16 @@ import React from 'react'
 import '../styles/activityBody.css'
 
 export default function ActivityBody() {
+    let handleActivityCreation = (e)=>{
+        e.preventDefault()
+        let dataArray={}
+        let formdata = new FormData(e.target)
+        for(let [key,value] of formdata.entries()){
+            dataArray[key] = value
+        }
+        console.log('dataArray=>',dataArray)
+        // e.target.reset()
+    }
     return (
         <>
             <div className="container d-flex flex-column justify-content-center align-items-center mt-5">
@@ -125,18 +135,18 @@ export default function ActivityBody() {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form action="">
+                            <form action="" onSubmit={handleActivityCreation}>
+                                <label>Select exercise activity</label>
                                 <select class="form-select" aria-label="Default select example" name="uactivity">
-                                    <option selected>Select exercise activity</option>
-                                    <option value="1">Run</option>
-                                    <option value="2">Walk</option>
-                                    <option value="3">Hiking</option>
-                                    <option value="3">Swimming</option>
-                                    <option value="3">Bicycle Riding</option>
+                                    <option selected>Run</option>
+                                    <option value="Walk">Walk</option>
+                                    <option value="Hiking">Hiking</option>
+                                    <option value="Swimming">Swimming</option>
+                                    <option value="Bicycle Riding">Bicycle Riding</option>
                                 </select>
                                 <div className="mb-3">
-                                    <label for="exampleFormControlTextarea1" className="form-label" name="udescription">Elaborate your activity</label>
-                                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="exampleFormControlTextarea1" className="form-label">Elaborate your activity</label>
+                                    <textarea className="form-control" name="udescription" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

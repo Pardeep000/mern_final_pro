@@ -2,6 +2,16 @@ import React from 'react'
 import '../styles/NavbarStyle.css';
 // 
 export default function Navbar() {
+    let handleRegisterUser = (e)=>{
+        e.preventDefault()
+        let dataArray={}
+        let formdata = new FormData(e.target)
+        for(let [key,value] of formdata.entries()){
+            dataArray[key] = value
+        }
+        console.log('dataArray=>',dataArray)
+        // e.target.reset()
+    }
     return (
         <>
             <div className="Navbar">
@@ -27,7 +37,7 @@ export default function Navbar() {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="">
+                            <form action="" onSubmit={handleRegisterUser}>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">User Name</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput1" name='uname' placeholder="Steven Smith" />
