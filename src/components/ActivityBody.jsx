@@ -15,7 +15,7 @@ export default function ActivityBody() {
     return (
         <>
             <div className="container d-flex flex-column justify-content-center align-items-center mt-5">
-                <div className="userName fs-2 fw-bold">Steven Smith</div>
+                <div className="userName fs-2 fw-bold">Ishtiaq Hussain</div>
                 <div className="activityBody container-fluid text-center mt-5 bg-light">
                     <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#activityCreation">Create new Activity</button>
                     <div className="activityForm mt-4" style={{ maxWidth: "45%", margin: "auto" }}>
@@ -144,6 +144,10 @@ export default function ActivityBody() {
                                     <option value="Swimming">Swimming</option>
                                     <option value="Bicycle Riding">Bicycle Riding</option>
                                 </select>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Duration</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name='duration' placeholder="2 hours 30 mintutes" />
+                                </div>
                                 <div className="mb-3">
                                     <label for="exampleFormControlTextarea1" className="form-label">Elaborate your activity</label>
                                     <textarea className="form-control" name="udescription" id="exampleFormControlTextarea1" rows="3"></textarea>
